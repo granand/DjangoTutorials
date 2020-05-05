@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}RiyaTunes{% endblock %}</title>
+    <!-- Loads the path to your static files -->
+    {% load static %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="{% static 'music/style.css' %}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ></script>
+
+</head>
+
+<body>
+
+<!--Header-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">">
+  <a class="navbar-brand" href="{% url 'music:index' %}">RiyaTunes</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topNavBar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+    <!--Items-->
+  <div class="collapse navbar-collapse" id="topNavBar">
+
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'music:index' %}"> <span class="sr-only">(current)</span>&nbsp; Albums</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'music:index' %}"> <span class="sr-only">(current)</span>&nbsp; Songs</a>
+      </li>
+    </ul>
+
+      <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q" value="">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+
+       <!--Items-->
+
+    <ul class="navbar-nav navbar-right">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'music:index' %}"> <span class="sr-only">(current)</span>&nbsp; Add Album</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'music:index' %}"> <span class="sr-only">(current)</span>&nbsp; Logout</a>
+      </li>
+    </ul>
+
+  </div>
+</nav>
+
+{% block body %}
+{% endblock %}
+
+</body>
+</html>
